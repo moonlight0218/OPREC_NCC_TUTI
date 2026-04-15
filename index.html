@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Validation FORM</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <h2>Validation Form</h2>
+        <div class="form">
+            <label for= "nama">Nama :</label>
+            <input type="text" id= "nama" name="name_" list="listNama" onkeyup="autocomplete(this.value)" value="">
+            <datalist id="listNama">
+                <option value="Ahmad"></option>
+                <option value="Andra"></option>
+                <option value="Anin"></option>
+                <option value="Alica"></option>
+                <option value="Berli"></option>
+                <option value="Caca"></option>
+                <option value="Chelsea"></option>
+                <option value="Cindy"></option>
+                <option value="Dara"></option>
+                <option value="Deswita"></option>
+                <option value="Erlangga"></option>
+                <option value="Fina"></option>
+                <option value="Gina"></option>
+            </datalist>
+            <br>
+            <br>
+            <label for= "nrp"> NRP  :</label>
+            <input type="text" id= "nrp" name="nrp_" value="">
+            <br>
+            <br>
+            <label for= "mk"> Mata Kuliah :</label>
+            <input type="text" id= "mk" name="mk_" value="">
+            <br>
+            <br>
+            <label for= "email"> Email:</label>
+            <input type="text" id= "email" name="email_" value="">
+            <br>
+            <br>
+        </div>
+        <button onclick="cek()">Cek</button>
+
+        <script>
+            let tags=["Ahmad", "Andra", "Anin","Alica","Berli","Caca","Chelsea",
+                "Cindy","Dara","Deswita","Erlangga","Fina","Gina"
+            ]
+
+            let n=tags.length;
+            function autocomplete(value){
+                document.getElementById('listNama').innerHTML=''
+                l=value.length;
+                for (let i=0;i<n; i++){
+                    if (((tags[i].toLowerCase()).indexOf(
+                        value.toLowerCase()))>-1){
+                            let node=document.createElement("option");
+                            let val=document.createTextNode(tags[i]);
+                            node.appendChild(val)
+
+                            document.getElementById("listNama").appendChild(node);
+                        }
+                }
+            }
+            function cek() {
+                var nama = document.getElementById("nama").value;
+                var nrp = document.getElementById("nrp").value;
+                var matkul = document.getElementById("mk").value;
+                var email = document.getElementById("email").value;
+
+            
+                if (nama != "" && email!="" && nrp!=""&& matkul!="") {
+                    alert('Data berhasil dicek!');
+                    return true;
+                }else{
+                    alert('Data tidak boleh kosong')
+            }}
+        </script>
+        
+    </body>
+</html>
