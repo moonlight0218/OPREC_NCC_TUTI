@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BLUANJA★ — Belanja TEROSS</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script>
+    const _t = localStorage.getItem('bluanja_theme') || 'light';
+    if (_t === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+  </script>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <a href="index.html">
+      <img src="assets/logo.png" alt="logo" class="logo-img">
+    </a>
+    <div class="nav-search">
+      <span class="search-icon">🔍</span>
+      <input type="text" id="searchInput" placeholder="Search here...">
+    </div>
+    <div class="nav-actions">
+      <img src="assets/profile.png" class="icon">
+      <button class="theme-toggle" id="themeToggle" title="Toggle dark mode">🌙</button>
+      <a href="cart.html" class="nav-icon-wrap">
+        <img src="assets/cart.png" class="icon">
+        <span class="cart-badge" id="cartBadge">0</span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- FILTER BAR -->
+  <div class="filter-bar fade-up fade-up-d1">
+    <div class="filter-label">Filter :</div>
+    <button class="filter-chip active">All</button>
+    <button class="filter-chip">Electronics</button>
+    <button class="filter-chip">Fashion</button>
+    <button class="filter-chip">Sports</button>
+    <button class="filter-chip">Books</button>
+    <div class="sort-wrap">
+      <select class="sort-select" id="sortSelect">
+        <option value="default">Sort: Default</option>
+        <option value="price-asc">Harga: Terendah</option>
+        <option value="price-desc">Harga: Tertinggi</option>
+        <option value="rating">Rating Terbaik</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- PRODUCT GRID -->
+  <section class="products-section">
+    <div class="products-grid fade-up fade-up-d2" id="productsGrid"></div>
+  </section>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+</html>

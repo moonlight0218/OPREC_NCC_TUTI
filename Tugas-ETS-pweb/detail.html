@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detail Produk — BLUANJA★</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script>
+    const _t = localStorage.getItem('bluanja_theme') || 'light';
+    if (_t === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+  </script>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <a href="index.html">
+      <img src="assets/logo.png" alt="logo" class="logo-img">
+    </a>
+    <div class="nav-search">
+      <span class="search-icon">🔍</span>
+      <input type="text" placeholder="Search here...">
+    </div>
+    <div class="nav-actions">
+      <img src="assets/profile.png" class="icon">
+      <button class="theme-toggle" id="themeToggle" title="Toggle dark mode">🌙</button>
+      <a href="cart.html" class="nav-icon-wrap">
+        <img src="assets/cart.png" class="icon">
+        <span class="cart-badge" id="cartBadge">0</span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- BREADCRUMB -->
+  <div class="breadcrumb fade-up">
+    <a href="index.html">Home</a>
+    <span class="sep">›</span>
+    <span id="bcCategory">—</span>
+    <span class="sep">›</span>
+    <span id="bcName">—</span>
+  </div>
+
+  <!-- DETAIL LAYOUT -->
+  <div class="detail-layout">
+
+    <!-- LEFT: IMAGE -->
+    <div class="detail-img-col fade-up fade-up-d1">
+      <div class="detail-main-img" id="mainImgWrap"></div>
+      <div class="detail-thumbs" id="thumbsRow"></div>
+    </div>
+
+    <!-- RIGHT: INFO -->
+    <div class="detail-info-col fade-up fade-up-d2">
+      <div class="detail-cat-row">
+        <div class="detail-cat" id="detailCat">—</div>
+      </div>
+      <div class="detail-name" id="detailName">—</div>
+      <div class="detail-price" id="detailPrice">—</div>
+      <div class="detail-rating-row">
+        <span class="stars" id="detailStars">★★★★★</span>
+        <span id="detailRating">—</span>
+        <span>|</span>
+        <span id="detailReviews">—</span>
+      </div>
+      <div class="detail-divider"></div>
+      <div class="detail-desc" id="detailDesc">—</div>
+      <div class="detail-stock-info">
+        Stok tersedia: <span id="detailStock">—</span>
+      </div>
+      <div class="qty-control">
+        <span style="font-size:14px;font-weight:600;color:var(--text-muted)">Qty:</span>
+        <button class="qty-btn" onclick="changeQty(-1)">−</button>
+        <span class="qty-val" id="qtyVal">1</span>
+        <button class="qty-btn" onclick="changeQty(1)">+</button>
+      </div>
+      <button class="detail-add-btn" id="addBtn" onclick="addToCart()">
+        🛒 ADD TO CART
+      </button>
+    </div>
+
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+</html>
